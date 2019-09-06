@@ -1,0 +1,56 @@
+.color-block {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+
+.display {
+    display: inline-block;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.buffer {
+    left: 100px;
+    top: 100px;
+    position: absolute;
+}
+
+.grid-box {
+    width: 9px;
+    height: 9px;
+    background-color: white;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.bbox {
+    border-style: solid;
+    border-width: 3px;
+    border-color: blue;
+    position: absolute;
+    z-index: 100;
+}
+
+.ellipsis {
+    position: absolute;
+    font-size: 20px;
+}
+
+.vline {
+    width: 3px;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+}
+
+.hline {
+    height: 3px;
+    background-color: red;
+    z-index: 100;
+    position: absolute;
+}
