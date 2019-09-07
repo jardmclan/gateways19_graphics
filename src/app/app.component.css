@@ -16,6 +16,7 @@
     left: 100px;
     top: 100px;
     position: absolute;
+    height: 1000vw;
 }
 
 .grid-box {

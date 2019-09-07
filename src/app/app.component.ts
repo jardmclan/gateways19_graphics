@@ -141,24 +141,37 @@ export class AppComponent implements OnInit {
 
     this.colorCells(indices, grid);
 
-    this.drawSubgrids(grid);
-  }
+    let widths = [];
+    let heights = [];
 
-  private drawSubgrids(ws: number[], hs: number[], offsetW: number, offsetH: number) {
-    let gridCells = [];
-    let offsetBaseH = 200;
-    let offsetBaseW = 0;
-
-    let i, j;
-    for(i = 0; i < ws.length; i++) {
-      for(j = 0; j < hs.length; j++) {
-
-        let grid = this.genGrid(offsetBaseW, offsetBaseH);
-        gridCells.push(grid);
-      }
+    let j;
+    let wt = 0;
+    let ht = 0;
+    for(i = 1; i < divisions.x; i++) {
+      widths.push(subWidth);
+      wt += subWidth;
     }
+    for(j = 1; j < divisions.y; j++) {
+      heights.push(subHeight);
+      ht += subHeight;
+    }
+    widths.push(xspan - wt);
+    heights.push(yspan - ht);
 
-    return gridCells;
+    console.log(widths, heights);
+
+    let offx = 0;
+    let offy = 500;
+
+    for(i = 0; i < widths.length; i++) {
+      offy = 500;
+      for(j = 0; j < heights.length; j++) {
+        this.genGrid(widths[i], heights[j], offx, offy);
+        offy += heights[j] * 9 + 20;
+      }
+      offx += widths[i] * 9 + 20;
+    }
+    
   }
 
 
